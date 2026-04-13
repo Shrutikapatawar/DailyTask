@@ -1,0 +1,10 @@
+{
+  "name": "home-SA",
+  "type": "nodejs",
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "nodeVersion": "18",
+  "environment": "production",
+  "installCommand": "npm install",
+  "startCommand": "npm start"
+}

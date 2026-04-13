@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 147 30% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 147 30% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 147 30% 18%;
+
+    --primary: 150 45% 20%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 100 22% 94%;
+    --secondary-foreground: 150 45% 20%;
+
+    --muted: 100 22% 94%;
+    --muted-foreground: 150 12% 50%;
+
+    --accent: 38 92% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 140 20% 85%;
+    --input: 140 20% 85%;
+    --ring: 150 45% 20%;
+
+    --radius: 0.625rem;
+
+    --green-dark: 147 47% 20%;
+    --green-mid: 147 42% 30%;
+    --green-btn: 150 43% 22%;
+    --green-bg: 100 22% 95%;
+    --green-logo-bg: 148 52% 24%;
+    --text-nav: 147 30% 24%;
+    --text-footer: 147 22% 30%;
+    --border-footer: 120 22% 80%;
+
+    --font-display: 'DM Serif Display', Georgia, serif;
+    --font-body: 'DM Sans', sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 15s linear infinite;
+}
+
+@keyframes blob {
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+.animate-blob {
+  animation: blob 10s infinite ease-in-out;
+}
+.input {
+  @apply border border-border/60 px-4 py-2.5 rounded-lg focus:outline-none focus:border-[hsl(var(--green-dark))];
+}
+
+.btn-primary {
+  @apply bg-[hsl(var(--green-dark))] text-white px-7 py-3.5 rounded-lg 
+         font-medium tracking-wide transition-all duration-300 
+         hover:bg-[#eab308] hover:text-black
+         hover:shadow-lg hover:-translate-y-[2px] active:scale-[0.98];
+}
+
+.btn-primary span {
+  @apply inline-block transition-transform duration-300;
+}
+
+.btn-primary:hover span {
+  transform: translateX(4px);
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
